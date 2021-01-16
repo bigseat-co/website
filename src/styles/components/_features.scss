@@ -1,0 +1,31 @@
+.features {
+}
+
+.features__punchline {
+  margin-top: 1em;
+  font-size: 50px;
+  letter-spacing: -0.9px;
+  font-weight: 600;
+  color: $color-black;
+  text-align: center;
+}
+
+.features-block {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.features-block__title {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 0.5em;
+}
+
+.features-block__text {
+  font-weight: 300;
+  letter-spacing: 0.23px;
+}
+
+.features-block__image {
+  max-height: 90%;
+}

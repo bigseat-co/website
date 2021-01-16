@@ -1,0 +1,16 @@
+.header {
+  margin-top: 1em;
+}
+
+.header__logo {
+  font-size: 40px;
+  letter-spacing: -0.9px;
+  font-weight: 800;
+  color: $color-black
+}
+
+.header__link {
+  &:hover {
+    border-bottom: 3px solid $color-primary;
+  }
+}
