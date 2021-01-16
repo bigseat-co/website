@@ -1,20 +1,9 @@
-# base image
 FROM node:15.3.0
+WORKDIR /usr/src/app
+COPY package.json .
+RUN yarn global add gatsby-cli
+RUN yarn install
+COPY gatsby-config.js .
+EXPOSE 8000
 
-# set working directory
-RUN mkdir /app
-WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# install and cache app dependencies using yarn
-ADD package.json yarn.lock /app/
-RUN yarn --pure-lockfile
-
-# Copy all frontend stuff to new "app" folder
-COPY . /app/
-
-CMD ["./run.sh"]
-
-EXPOSE 9000
+CMD ["gatsby", "serve", "-H", "0.0.0.0"]
