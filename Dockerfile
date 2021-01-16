@@ -1,4 +1,20 @@
-FROM gatsbyjs/gatsby:onbuild as build
+# base image
+FROM node:15.3.0
 
-FROM gatsbyjs/gatsby
-COPY --from=build /app/public /public
+# set working directory
+RUN mkdir /app
+WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install and cache app dependencies using yarn
+ADD package.json yarn.lock /app/
+RUN yarn --pure-lockfile
+
+# Copy all frontend stuff to new "app" folder
+COPY . /app/
+
+CMD ["./run.sh"]
+
+EXPOSE 9000
