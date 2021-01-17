@@ -4,34 +4,31 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Bigseat x Gatsby ❤️
 </h1>
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+1.  **Install Gatsby**
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    yarn global add gatsby-cli
     ```
 
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+2.  **Install Dependencies**
 
     ```shell
-    cd my-gatsby-site/
+    yarn
+    ```
+
+3.  **Start developing.**
+
+    Navigate into the site’s directory and start it up.
+
+    ```shell
+    cd website
     npm run develop
     ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
 
 4.  **Learn more**
 
