@@ -15,6 +15,10 @@ import CheckHighlightImage from "../images/check-highlight.svg"
 
 const earlyAccessEndpoint = 'https://j245chq3e8t.typeform.com/to/EvqyWIyL'
 
+const goHome = () => {
+  navigate('/')
+}
+
 const signIn = () => {
   navigate(earlyAccessEndpoint)
 }
@@ -95,7 +99,7 @@ const IndexPage = () => {
         <div className="container-fluid">
           <div className="row middle-xs header">
             <div className="col-lg-6 col-md-4 col-xs-2">
-              <h1 className="header__logo">
+              <h1 className="header__logo" onClick={goHome}>
                 BigSeat.
               </h1>
             </div>
