@@ -87,7 +87,7 @@ const IndexPage = () => {
       <div className="wrapper">
         {/* Header */}
         <div className="container-fluid">
-          <div className="row header">
+          <div className="row middle-xs header">
             <div className="col-lg-6 col-md-4 col-xs-2">
               <h1 className="header__logo">
                 BigSeat.
