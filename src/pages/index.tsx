@@ -12,12 +12,14 @@ import DownImage from "../images/down.svg"
 import CheckImage from "../images/check.svg"
 import CheckHighlightImage from "../images/check-highlight.svg"
 
+const earlyAccessEndpoint = 'https://j245chq3e8t.typeform.com/to/EvqyWIyL'
+
 const signIn = () => {
-  navigate('/sign-in')
+  navigate(earlyAccessEndpoint)
 }
 
 const signUp = () => {
-  navigate('/sign-up')
+  navigate(earlyAccessEndpoint)
 }
 
 const learnHow = () => {
@@ -29,19 +31,19 @@ const goDown = () => {
 }
 
 const selectSmallOffice = () => {
-  navigate('/sign-up')
+  navigate(earlyAccessEndpoint)
 }
 
 const selectGrowingOffice = () => {
-  navigate('/sign-up')
+  navigate(earlyAccessEndpoint)
 }
 
 const selectBigOffice = () => {
-  navigate('/sign-up')
+  navigate(earlyAccessEndpoint)
 }
 
 const bottomSignUp = () => {
-  navigate('/sign-up')
+  navigate(earlyAccessEndpoint)
 }
 
 
