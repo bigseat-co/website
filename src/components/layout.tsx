@@ -4,14 +4,13 @@ import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import { goHome, signIn, bottomSignUp } from '../helpers/navigate'
 
-/* <Helmet>
-<html lang="en" />
-<title>BigSeat - Office space made simple.</title>
-<description>Track occupancy, optimize space and integrate easily with your company stack.</description>
-</Helmet> */
-
 export default function Layout({ children, datoCmsMenu }) {
   return (<main>
+    <Helmet>
+      <html lang="en" />
+      <title>BigSeat - Office space made simple.</title>
+      <description>Track occupancy, optimize space and integrate easily with your company stack.</description>
+    </Helmet>
     <div className="wrapper">
       {/* Header */}
       <div className="container-fluid">
@@ -29,14 +28,18 @@ export default function Layout({ children, datoCmsMenu }) {
                 </Link>
               </div>
               <div className="col-sm-3 +more-than-xs">
-                <Link className="header__link" to="#pricing">Pricing</Link>
+                <Link className="header__link" to="#pricing">
+                  {datoCmsMenu.pricing}
+                </Link>
               </div>
               <div className="col-sm-3 +more-than-xs">
-                <Link className="header__link" to="#about">About</Link>
+                <Link className="header__link" to="#about">
+                  {datoCmsMenu.about}
+                </Link>
               </div>
               <div className="col-xs-8 col-sm-3">
                 <span className="menu__button" onClick={signIn}>
-                  Sign in
+                  {datoCmsMenu.signIn}
                 </span>
               </div>
             </div>

@@ -20,6 +20,9 @@ export const query = graphql`
   query MenuQuery {
     datoCmsMenu(locale: { eq: "en" }) {
       features
+      pricing
+      about
+      signIn
     }
   }
 `
