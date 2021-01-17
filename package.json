@@ -19,10 +19,11 @@
     "gatsby": "^2.26.1",
     "gatsby-plugin-manifest": "^2.10.0",
     "gatsby-plugin-sass": "^3.0.0",
-    "gatsby-plugin-transition-link": "^1.20.5",
+    "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gsap": "^3.6.0",
     "node-sass": "^5.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-intersection-observer": "^8.31.0"
   }
 }
