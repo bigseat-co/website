@@ -19,13 +19,25 @@
   font-weight: 600;
   font-size: 25px;
   margin-bottom: 0.5em;
+  margin-top: 1em;
+  text-align: left;
+  @include breakpoint("xs") {
+    text-align: center;
+  }
 }
 
 .features-block__text {
   font-weight: 300;
   letter-spacing: 0.23px;
+  text-align: left;
+  @include breakpoint("xs") {
+    text-align: center;
+  }
 }
 
 .features-block__image {
-  max-height: 90%;
+  @include breakpoint("xs") {
+    max-width: 70%;
+    margin: auto;
+  }
 }

@@ -94,7 +94,7 @@ const IndexPage = () => {
               </h1>
             </div>
             <div className="col-lg-6 col-md-8 col-xs-10">
-              <div className="row end-xs menu">
+              <div className="row end-xs middle-xs menu">
                 <div className="col-sm-3 +more-than-xs">
                   <Link className="header__link" to="#features">Features</Link>
                 </div>
@@ -172,34 +172,34 @@ const IndexPage = () => {
                   </h2>
                 </div>
               </div>
-              <div className="row features-block middle-xs start-xs">
-                <div className="col-xs-5">
+              <div className="row features-block middle-xs center-xs">
+                <div className="col-xs-12 col-sm-5">
                   <h3 className="features-block__title">Accessibility.</h3>
                   <p className="features-block__text">Nothing to install, fast sign-up and super simple interface. You can setup your office space in a few clicks and let people book it by sending them your company link.</p>
                 </div>
-                <div className="col-xs-6 col-md-5 col-xs-offset-1 col-md-offset-2">
+                <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
                   <div className="features-block__image">
                     <img src={AccessibilityImage} />
                   </div>
                 </div>
               </div>
-              <div className="row features-block middle-xs start-xs">
-              <div className="col-xs-6">
+              <div className="row features-block middle-xs center-xs">
+              <div className="col-xs-12 col-sm-5 col-sm-offset-1">
                   <div className="features-block__image">
                     <img src={AnalyticsImage} />
                   </div>
                 </div>
-                <div className="col-xs-5 col-md-5 col-xs-offset-1">
+                <div className="col-xs-12 col-sm-5 col-md-offset-1">
                   <h3 className="features-block__title">Analytics.</h3>
                   <p className="features-block__text">We digest data for you so you don't have to worry about space optimization. You'll know who's where at any moment and save real rental money by reading our analysis.</p>
                 </div>
               </div>
-              <div className="row features-block middle-xs start-xs">
-                <div className="col-xs-5">
+              <div className="row features-block middle-xs center-xs">
+                <div className="col-xs-12 col-sm-5">
                   <h3 className="features-block__title">Integrations.</h3>
                   <p className="features-block__text">Each company has its stack and we want you to feel you have to adapt. That's why we integrate easily with several solutions such as Slack, Notion or Zapier so you can easily adopt our system.</p>
                 </div>
-                <div className="col-xs-6 col-md-5 col-xs-offset-1 col-md-offset-2">
+                <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
                   <div className="features-block__image">
                     <img src={IntegrationsImage} />
                   </div>
@@ -364,24 +364,24 @@ const IndexPage = () => {
                   </h2>
                 </div>
               </div>
-              <div className="row features-block middle-xs start-xs">
-                <div className="col-xs-5">
+              <div className="row features-block middle-xs center-xs">
+                <div className="col-xs-12 col-sm-5">
                   <h3 className="features-block__title">The project</h3>
                   <p className="features-block__text">The world is changing and people relation with offices as well. Working partially from home, or going to the office once in a while. Softwares should evolve and be able to manage this properly. Our goal is to be your office space management solution through our simplicity and flexibility.</p>
                 </div>
-                <div className="col-xs-6 col-md-5 col-xs-offset-1 col-md-offset-2">
+                <div className="ccol-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
                   <div className="features-block__image">
                     <img src={TheProjectImage} />
                   </div>
                 </div>
               </div>
-              <div className="row features-block middle-xs start-xs">
-              <div className="col-xs-5">
+              <div className="row features-block middle-xs center-xs">
+              <div className="col-xs-12 col-sm-5">
                   <div className="features-block__image">
                     <img src={TheCompanyImage} />
                   </div>
                 </div>
-                <div className="col-xs-6 col-md-5 col-xs-offset-1">
+                <div className="col-xs-12 col-sm-5 col-md-offset-1">
                   <h3 className="features-block__title">The company.</h3>
                   <p className="features-block__text">Born in January 2021, it was founded by Laurent Schaffner and Jérémie Ges which are both engineers. It's still in closed beta and waiting for your feedbacks.</p>
                 </div>
@@ -393,7 +393,7 @@ const IndexPage = () => {
         <div className="banner">
           <div className="container-fluid">
             <div className="row center-xs">
-              <div className="col-xs-8">
+              <div className="col-xs-12 col-sm-8">
                 <div className="row">
                   <div className="col-xs-12">
                     <div className="banner__punchline">
@@ -402,7 +402,7 @@ const IndexPage = () => {
                   </div>
                 </div>
                 <div className="row center-xs">
-                  <div className="col-xs-6">
+                  <div className="col-xs-12 col-sm-6">
                     <div className="banner__underline">
                       It takes you less than <span className="banner__underline--time">5 minutes</span> to sign-up and start using ou product.
                     </div>
