@@ -1,1 +1,28 @@
-{"name":"big-seat","version":"1.0.0","private":true,"description":"BigSeat","author":"Laurent Schaffner","keywords":["gatsby"],"scripts":{"develop":"gatsby develop","start":"gatsby develop","build":"gatsby build","serve":"gatsby serve","clean":"gatsby clean"},"dependencies":{"flexboxgrid":"^6.3.1","gatsby":"^2.26.1","gatsby-plugin-sass":"^3.0.0","gatsby-plugin-transition-link":"^1.20.5","gsap":"^3.6.0","node-sass":"^5.0.0","react":"^16.13.1","react-dom":"^16.13.1"}}
+{
+  "name": "big-seat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BigSeat",
+  "author": "Laurent Schaffner",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "flexboxgrid": "^6.3.1",
+    "gatsby": "^2.26.1",
+    "gatsby-plugin-manifest": "^2.10.0",
+    "gatsby-plugin-sass": "^3.0.0",
+    "gatsby-plugin-transition-link": "^1.20.5",
+    "gsap": "^3.6.0",
+    "node-sass": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
