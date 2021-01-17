@@ -15,7 +15,7 @@ const NotFoundPage = () => {
       <Helmet>
         <html lang="en" />
         <title>BigSeat - Page not found</title>
-        <description>Office space made simple.</description>
+        <description>Track occupancy, optimize space and integrate easily with your company stack.</description>
       </Helmet>
       <div className="wrapper">
         {/* Header */}

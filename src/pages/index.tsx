@@ -91,8 +91,8 @@ const IndexPage = () => {
     <main>
       <Helmet>
         <html lang="en" />
-        <title>BigSeat.</title>
-        <description>Office space made simple.</description>
+        <title>BigSeat - Office space made simple.</title>
+        <description>Track occupancy, optimize space and integrate easily with your company stack.</description>
       </Helmet>
       <div className="wrapper">
         {/* Header */}
