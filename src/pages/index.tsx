@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import { Link, navigate } from "gatsby"
 
 import IntroductionImage from "../images/introduction.svg"
@@ -84,6 +85,11 @@ const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
 const IndexPage = () => {
   return (
     <main>
+      <Helmet>
+        <html lang="en" />
+        <title>BigSeat.</title>
+        <description>Office space made simple.</description>
+      </Helmet>
       <div className="wrapper">
         {/* Header */}
         <div className="container-fluid">
