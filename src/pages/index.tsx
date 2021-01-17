@@ -245,7 +245,7 @@ const IndexPage = () => {
                       </div>
                     </div>
                     <div className="row center-xs start-md">
-                      <div className="col-xs-5 col-sm-10 col-md-12">
+                      <div className="col-xs-10 col-md-12">
                         <div className="pricing-block__description">
                           This is our most basic plan. It provides unlimited spaces, analytics and integrations and a few available seats for small structures.
                         </div>
@@ -288,7 +288,7 @@ const IndexPage = () => {
                       </div>
                     </div>
                     <div className="row center-xs start-md">
-                      <div className="col-xs-5 col-sm-10 col-md-12">
+                      <div className="col-xs-10 col-md-12">
                         <div className="pricing-block__description">
                           If you’re a growing company and have too many employees for our free version, this one will fit you perfectly. You can try it out before taking a decision.
                         </div>
@@ -331,7 +331,7 @@ const IndexPage = () => {
                       </div>
                     </div>
                     <div className="row center-xs start-md">
-                      <div className="col-xs-5 col-sm-10 col-md-12">
+                      <div className="col-xs-10 col-md-12">
                         <div className="pricing-block__description">
                         You’re a bigger, more established company which needs an unlimited amount of seats? No worry, here’s the perfect fit for you.
                         </div>
