@@ -112,7 +112,7 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-          <div className="row introduction" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-back">
+          <div className="row introduction">
             <div className="col-xs-12">
               <div className="row">
                 <div className="col-xs-12">
@@ -390,7 +390,7 @@ const IndexPage = () => {
           </div>
         </div>
         {/* Get started now */}
-        <div className="banner" data-sal="slide-down" data-sal-delay="400" data-sal-easing="ease-out-back">
+        <div className="banner">
           <div className="container-fluid">
             <div className="row center-xs">
               <div className="col-xs-12 col-sm-8">
