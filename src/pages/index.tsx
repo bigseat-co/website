@@ -87,7 +87,7 @@ const IndexPage = () => {
       <div className="wrapper">
         {/* Header */}
         <div className="container-fluid">
-          <div className="row middle-xs header" data-sal="slide-down" data-sal-delay="600" data-sal-easing="ease-out-back">
+          <div className="row middle-xs header">
             <div className="col-lg-6 col-md-4 col-xs-2">
               <h1 className="header__logo">
                 BigSeat.
@@ -172,7 +172,7 @@ const IndexPage = () => {
                   </h2>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs" data-sal="slide-right" data-sal-delay="200" data-sal-easing="ease-out-back">
+              <div className="row features-block middle-xs center-xs">
                 <div className="col-xs-12 col-sm-5">
                   <h3 className="features-block__title">Accessibility.</h3>
                   <p className="features-block__text">Nothing to install, fast sign-up and super simple interface. You can setup your office space in a few clicks and let people book it by sending them your company link.</p>
@@ -183,7 +183,7 @@ const IndexPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs" data-sal="slide-left" data-sal-delay="200" data-sal-easing="ease-out-back">
+              <div className="row features-block middle-xs center-xs">
               <div className="col-xs-12 col-sm-5 col-sm-offset-1">
                   <div className="features-block__image">
                     <img src={AnalyticsImage} />
@@ -194,7 +194,7 @@ const IndexPage = () => {
                   <p className="features-block__text">We digest data for you so you don't have to worry about space optimization. You'll know who's where at any moment and save real rental money by reading our analysis.</p>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs" data-sal="slide-right" data-sal-delay="200" data-sal-easing="ease-out-back">
+              <div className="row features-block middle-xs center-xs">
                 <div className="col-xs-12 col-sm-5">
                   <h3 className="features-block__title">Integrations.</h3>
                   <p className="features-block__text">Each company has its stack and we want you to feel you have to adapt. That's why we integrate easily with several solutions such as Slack, Notion or Zapier so you can easily adopt our system.</p>
@@ -364,7 +364,7 @@ const IndexPage = () => {
                   </h2>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs" data-sal="slide-right" data-sal-delay="200" data-sal-easing="ease-out-back">
+              <div className="row features-block middle-xs center-xs">
                 <div className="col-xs-12 col-sm-5">
                   <h3 className="features-block__title">The project</h3>
                   <p className="features-block__text">The world is changing and people relation with offices as well. Working partially from home, or going to the office once in a while. Softwares should evolve and be able to manage this properly. Our goal is to be your office space management solution through our simplicity and flexibility.</p>
@@ -375,7 +375,7 @@ const IndexPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs" data-sal="slide-left" data-sal-delay="200" data-sal-easing="ease-out-back">
+              <div className="row features-block middle-xs center-xs">
               <div className="col-xs-12 col-sm-5">
                   <div className="features-block__image">
                     <img src={TheCompanyImage} />
