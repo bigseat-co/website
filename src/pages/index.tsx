@@ -1,6 +1,7 @@
 import * as React from "react"
-import { Helmet } from "react-helmet"
-import { Link, navigate } from "gatsby"
+import { graphql } from "gatsby"
+
+import { learnHow, signUp, goDown, selectSmallOffice, selectGrowingOffice, selectBigOffice} from '../helpers/navigate'
 
 import IntroductionImage from "../images/introduction.svg"
 import AccessibilityImage from "../images/accessibility.svg"
@@ -13,44 +14,15 @@ import DownImage from "../images/down.svg"
 import CheckImage from "../images/check.svg"
 import CheckHighlightImage from "../images/check-highlight.svg"
 
-const earlyAccessEndpoint = 'https://j245chq3e8t.typeform.com/to/EvqyWIyL'
+import Layout from "../components/layout"
 
-const goHome = () => {
-  navigate('/')
-}
-
-const signIn = () => {
-  navigate(earlyAccessEndpoint)
-}
-
-const signUp = () => {
-  navigate(earlyAccessEndpoint)
-}
-
-const learnHow = () => {
-  navigate('#features')
-}
-
-const goDown = () => {
-  navigate('#features')
-}
-
-const selectSmallOffice = () => {
-  navigate(earlyAccessEndpoint)
-}
-
-const selectGrowingOffice = () => {
-  navigate(earlyAccessEndpoint)
-}
-
-const selectBigOffice = () => {
-  navigate(earlyAccessEndpoint)
-}
-
-const bottomSignUp = () => {
-  navigate(earlyAccessEndpoint)
-}
-
+export const query = graphql`
+  query MenuQuery {
+    datoCmsMenu(locale: { eq: "en" }) {
+      features
+    }
+  }
+`
 
 const plansAdvantages = {
   smallOffice: [
@@ -85,43 +57,11 @@ const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
   ))
 }
 
-// markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <main>
-      <Helmet>
-        <html lang="en" />
-        <title>BigSeat - Office space made simple.</title>
-        <description>Track occupancy, optimize space and integrate easily with your company stack.</description>
-      </Helmet>
-      <div className="wrapper">
-        {/* Header */}
+      <Layout datoCmsMenu={data.datoCmsMenu}>
         <div className="container-fluid">
-          <div className="row middle-xs header">
-            <div className="col-lg-6 col-md-4 col-xs-2">
-              <h1 className="header__logo" onClick={goHome}>
-                BigSeat.
-              </h1>
-            </div>
-            <div className="col-lg-6 col-md-8 col-xs-10">
-              <div className="row end-xs middle-xs menu">
-                <div className="col-sm-3 +more-than-xs">
-                  <Link className="header__link" to="#features">Features</Link>
-                </div>
-                <div className="col-sm-3 +more-than-xs">
-                  <Link className="header__link" to="#pricing">Pricing</Link>
-                </div>
-                <div className="col-sm-3 +more-than-xs">
-                  <Link className="header__link" to="#about">About</Link>
-                </div>
-                <div className="col-xs-8 col-sm-3">
-                  <span className="menu__button" onClick={signIn}>
-                    Sign in
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="row introduction">
             <div className="col-xs-12">
               <div className="row">
@@ -170,7 +110,6 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-        </div>
         {/* Features */}
         <div className="container-fluid">
           <div className="row center-xs features" id="features">
@@ -399,38 +338,9 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        {/* Get started now */}
-        <div className="banner">
-          <div className="container-fluid">
-            <div className="row center-xs">
-              <div className="col-xs-12 col-sm-8">
-                <div className="row">
-                  <div className="col-xs-12">
-                    <div className="banner__punchline">
-                      Get started now.
-                    </div>
-                  </div>
-                </div>
-                <div className="row center-xs">
-                  <div className="col-xs-12 col-sm-6">
-                    <div className="banner__underline">
-                      It takes you less than <span className="banner__underline--time">5 minutes</span> to sign-up and start using ou product.
-                    </div>
-                  </div>
-                </div>
-                <div className="row center-xs">
-                  <div className="col-lg-4 col-md-6">
-                    <div className="button button--white" onClick={bottomSignUp}>
-                      Sign up free now
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </main>
+    </Layout>
+  </main>
   )
 }
 

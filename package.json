@@ -21,6 +21,8 @@
     "gatsby-plugin-react-helmet": "^3.8.0",
     "gatsby-plugin-sass": "^3.0.0",
     "gatsby-plugin-scroll-reveal": "^0.0.7",
+    "gatsby-source-datocms": "^2.5.8",
+    "graphql": "^15.4.0",
     "gsap": "^3.6.0",
     "node-sass": "^5.0.0",
     "react": "^16.13.1",
