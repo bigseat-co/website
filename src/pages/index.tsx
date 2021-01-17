@@ -222,7 +222,7 @@ const IndexPage = () => {
               <div className="row">
                 {/* Small office */}
                 <div className="col-xs-12 col-sm-4">
-                  <div className="pricing-block" data-sal="zoom-in" data-sal-delay="200" data-sal-easing="ease-out-back">
+                  <div className="pricing-block" data-sal="zoom-in" data-sal-delay="400" data-sal-easing="ease-out-back">
                     <div className="row center-xs">
                       <div className="col-xs-12">
                         <div className="pricing-block__title">
@@ -265,7 +265,7 @@ const IndexPage = () => {
                 </div>
                 {/* Growing office */}
                 <div className="col-xs-12 col-sm-4">
-                  <div className="pricing-block" data-sal="zoom-in" data-sal-delay="400" data-sal-easing="ease-out-back">
+                  <div className="pricing-block" data-sal="zoom-in" data-sal-delay="200" data-sal-easing="ease-out-back">
                     <div className="row center-xs">
                       <div className="col-xs-12">
                         <div className="pricing-block__title">
