@@ -56,22 +56,22 @@ const NotFoundPage = () => {
       <div className="wrapper">
         {/* Header */}
         <div className="container-fluid">
-          <div className="row header">
+          <div className="row middle-xs header">
             <div className="col-lg-6 col-md-4 col-xs-2">
               <h1 className="header__logo">
                 BigSeat.
               </h1>
             </div>
             <div className="col-lg-6 col-md-8 col-xs-10">
-              <div className="row end-xs menu">
+              <div className="row end-xs middle-xs menu">
                 <div className="col-sm-3 +more-than-xs">
-                  <Link className="header__link" to="/#features">Features</Link>
+                  <Link className="header__link" to="#features">Features</Link>
                 </div>
                 <div className="col-sm-3 +more-than-xs">
-                  <Link className="header__link" to="/#pricing">Pricing</Link>
+                  <Link className="header__link" to="#pricing">Pricing</Link>
                 </div>
                 <div className="col-sm-3 +more-than-xs">
-                  <Link className="header__link" to="/#about">About</Link>
+                  <Link className="header__link" to="#about">About</Link>
                 </div>
                 <div className="col-xs-8 col-sm-3">
                   <span className="menu__button" onClick={signIn}>
