@@ -33,9 +33,18 @@ export const query = graphql`
         callToAction
         secondaryAction
         featuresPunchline
+        aboutPunchline
       }
 
       allFeatures(locale: en, orderBy: order_ASC) {
+        title
+        description
+        image {
+          url
+        }
+      }
+
+      allAbouts(locale: en, orderBy: order_ASC) {
         title
         description
         image {
@@ -67,17 +76,17 @@ const plansAdvantages = {
   ]
 }
 
-const feature = (feature, index) => {
+const block = (block, index) => {
   if (isOdd(index)) {
     return (
       <div className="row features-block middle-xs center-xs">
         <div className="col-xs-12 col-sm-5">
-          <h3 className="features-block__title">{feature.title}</h3>
-          <p className="features-block__text">{feature.description}</p>
+          <h3 className="features-block__title">{block.title}</h3>
+          <p className="features-block__text">{block.description}</p>
         </div>
         <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
           <div className="features-block__image">
-            <img src={feature.image.url} />
+            <img src={block.image.url} />
           </div>
         </div>
       </div>
@@ -87,12 +96,12 @@ const feature = (feature, index) => {
       <div className="row features-block middle-xs center-xs">
       <div className="col-xs-12 col-sm-5 col-sm-offset-1">
           <div className="features-block__image">
-            <img src={feature.image.url} />
+            <img src={block.image.url} />
           </div>
         </div>
         <div className="col-xs-12 col-sm-5 col-md-offset-1">
-          <h3 className="features-block__title">{feature.title}</h3>
-          <p className="features-block__text">{feature.description}</p>
+          <h3 className="features-block__title">{block.title}</h3>
+          <p className="features-block__text">{block.description}</p>
         </div>
       </div>
     )
@@ -173,7 +182,7 @@ const IndexPage = ({ data }) => {
               </div>
 
               {data.datocms.allFeatures.map((node, index) => (
-                feature(node, index)
+                block(node, index)
               ))}
 
             </div>
@@ -331,32 +340,15 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="features__punchline">
-                    About us
+                    {data.datocms.aboutPunchline}
                   </h2>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs">
-                <div className="col-xs-12 col-sm-5">
-                  <h3 className="features-block__title">The project</h3>
-                  <p className="features-block__text">The world is changing and people relation with offices as well. Working partially from home, or going to the office once in a while. Softwares should evolve and be able to manage this properly. Our goal is to be your office space management solution through our simplicity and flexibility.</p>
-                </div>
-                <div className="ccol-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
-                  <div className="features-block__image">
-                    <img src={TheProjectImage} />
-                  </div>
-                </div>
-              </div>
-              <div className="row features-block middle-xs center-xs">
-              <div className="col-xs-12 col-sm-5">
-                  <div className="features-block__image">
-                    <img src={TheCompanyImage} />
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-5 col-md-offset-1">
-                  <h3 className="features-block__title">The company</h3>
-                  <p className="features-block__text">Born in January 2021, it was founded by Laurent Schaffner and Jérémie Ges which are both engineers. It's still in closed beta and waiting for your feedbacks.</p>
-                </div>
-              </div>
+
+              {data.datocms.allAbouts.map((node, index) => (
+                block(node, index)
+              ))}
+
             </div>
           </div>
         </div>
