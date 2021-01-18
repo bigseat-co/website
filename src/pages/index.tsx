@@ -84,16 +84,12 @@ const IndexPage = ({ data }) => {
               <div className="row center-xs">
                 <div className="col-lg-8 col-md-10 col-xs-12">
                   <div className="row middle-xs center-xs">
-                    <div className="col-md-4 col-xs-12">
-                      <span className="button" onClick={signUp}>
-                        Sign up free now
-                      </span>
-                    </div>
-                    <div className="col-md-4 col-xs-12">
-                      <div className="link" onClick={learnHow}>
-                        Learn how we do it
-                      </div>
-                    </div>
+                    <button className="button" onClick={signUp}>
+                      Sign up free now
+                    </button>
+                    <button className="button button--white-alt" onClick={learnHow}>
+                      Learn how we do it
+                    </button>
                   </div>
                 </div>
               </div>

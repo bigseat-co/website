@@ -5,8 +5,16 @@
 $color-black: black;
 $color-white: white;
 
-$color-primary: #504DE2;
+$color-indigo-500: #504DE2;
+
+$color-gray-300: #DFE2E6;
+$color-gray-400: #9CA3AF;
+$color-gray-500: #6B7280;
+
+/**
+ * Functional colors
+ */
+
+$color-primary: $color-indigo-500;
 $color-secondary: #303031;
 $color-background: #F9F9F9;
-
-$color-light-grey: #E8E8EA;

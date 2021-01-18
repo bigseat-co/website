@@ -1,23 +1,36 @@
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == xs {
-    @media (max-width: 767px) {
+    @media (max-width: $breakpoint-xs) {
       @content;
     }
   } @else if $breakpoint == sm {
-    @media (max-width: 991px) {
+    @media (max-width: $breakpoint-sm) {
       @content;
     }
   } @else if $breakpoint == md {
-    @media (max-width: 1199px) {
+    @media (max-width: $breakpoint-md) {
       @content;
     }
   } @else if $breakpoint == lg {
-    @media (min-width: 1200px) {
+    @media (min-width: $breakpoint-lg) {
       @content;
     }
   } @else {
     @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
+}
+
+@mixin button-reset {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+    user-select: none;
 }
 
 @mixin placeholder-color($color) {
