@@ -8,12 +8,22 @@
   font-size: 66px;
   font-weight: 900;
   color: $color-black;
+  line-height: 1;
+
+  @include breakpoint('xs') {
+    font-size: 40px;
+  }
 }
 
 .introduction__underline {
+  margin-top: $spacing-unit;
   font-size: 24px;
   font-weight: 400;
   margin-bottom: $spacing-unit * 6;
+
+  @include breakpoint('xs') {
+    font-size: 18px;
+  }
 }
 
 .introduction__image {

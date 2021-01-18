@@ -77,7 +77,7 @@ const IndexPage = ({ data }) => {
               <div className="row center-xs">
                 <div className="col-xs-10 col-md-6">
                   <div className="introduction__underline">
-                    Track occupancy, optimize space and integrate easily <br/> with your company stack.
+                    Track occupancy, optimize space and integrate easily with your company stack.
                   </div>
                 </div>
               </div>
