@@ -24,6 +24,10 @@
   background: white;
   color: $color-gray-500;
   border: 1px solid $color-gray-300;
+
+  .header__item & {
+    padding: ($spacing-unit * 2) ($spacing-unit * 4);
+  }
 }
 
 .button--text {

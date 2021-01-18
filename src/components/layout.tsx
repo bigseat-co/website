@@ -22,26 +22,26 @@ export default function Layout({ children, datoCmsMenu }) {
               </h1>
             </div>
             <div className="col-lg col-md-8 col-xs-10">
-              <div className="row end-xs middle-xs menu">
-                <div className="col-sm-3 +more-than-xs">
+              <div className="header__items">
+                <div className="header__item">
                   <Link className="header__link" to="#features">
                     {datoCmsMenu.features}
                   </Link>
                 </div>
-                <div className="col-sm-3 +more-than-xs">
+                <div className="header__item">
                   <Link className="header__link" to="#pricing">
                     {datoCmsMenu.pricing}
                   </Link>
                 </div>
-                <div className="col-sm-3 +more-than-xs">
+                <div className="header__item">
                   <Link className="header__link" to="#about">
                     {datoCmsMenu.about}
                   </Link>
                 </div>
-                <div className="col-xs-8 col-sm-3">
-                  <span className="menu__button" onClick={signIn}>
-                    {datoCmsMenu.signIn}
-                  </span>
+                <div className="header__item header__item--sign-in">
+                  <button className="button button--white-alt" onClick={signIn}>
+                    {datoCmsMenu.signIn} ->
+                  </button>
                 </div>
               </div>
             </div>
