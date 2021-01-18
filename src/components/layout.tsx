@@ -58,7 +58,7 @@ export default function Layout({ children, datoCmsMenu }) {
               <div className="row">
                 <div className="col-xs-12">
                   <div className="banner__punchline">
-                    Get started now.
+                    Get started now
                   </div>
                 </div>
               </div>

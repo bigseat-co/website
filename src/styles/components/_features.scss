@@ -1,13 +1,16 @@
-.features {
-}
+.features {}
 
 .features__punchline {
   margin-top: 0.5em;
-  font-size: 50px;
-  letter-spacing: -0.9px;
-  font-weight: 600;
+  font-size: 60px;
+  letter-spacing: $letter-spacing-x-small;
+  font-weight: 800;
   color: $color-black;
   text-align: center;
+
+  @include breakpoint("xs") {
+    font-size: 30px;
+  }
 }
 
 .features-block {
@@ -16,21 +19,26 @@
 }
 
 .features-block__title {
-  font-weight: 600;
-  font-size: 25px;
+  font-weight: 800;
+  font-size: 22px;
   margin-bottom: 0.5em;
   margin-top: 1em;
   text-align: left;
+
   @include breakpoint("xs") {
+    font-size: 20px;
     text-align: center;
   }
 }
 
 .features-block__text {
-  font-weight: 300;
-  letter-spacing: 0.23px;
+  font-size: 18px;
+  font-weight: 500;
   text-align: left;
+  color: $color-gray-500;
+
   @include breakpoint("xs") {
+    font-size: 16px;
     text-align: center;
   }
 }

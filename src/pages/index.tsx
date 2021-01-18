@@ -116,13 +116,13 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="features__punchline">
-                    It's that simple.
+                    It's that simple
                   </h2>
                 </div>
               </div>
               <div className="row features-block middle-xs center-xs">
                 <div className="col-xs-12 col-sm-5">
-                  <h3 className="features-block__title">Accessibility.</h3>
+                  <h3 className="features-block__title">Accessibility</h3>
                   <p className="features-block__text">Nothing to install, fast sign-up and super simple interface. You can setup your office space in a few clicks and let people book it by sending them your company link.</p>
                 </div>
                 <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
@@ -138,13 +138,13 @@ const IndexPage = ({ data }) => {
                   </div>
                 </div>
                 <div className="col-xs-12 col-sm-5 col-md-offset-1">
-                  <h3 className="features-block__title">Analytics.</h3>
+                  <h3 className="features-block__title">Analytics</h3>
                   <p className="features-block__text">We digest data for you so you don't have to worry about space optimization. You'll know who's where at any moment and save real rental money by reading our analysis.</p>
                 </div>
               </div>
               <div className="row features-block middle-xs center-xs">
                 <div className="col-xs-12 col-sm-5">
-                  <h3 className="features-block__title">Integrations.</h3>
+                  <h3 className="features-block__title">Integrations</h3>
                   <p className="features-block__text">Each company has its stack and we want you to feel you have to adapt. That's why we integrate easily with several solutions such as Slack, Notion or Zapier so you can easily adopt our system.</p>
                 </div>
                 <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
@@ -163,7 +163,7 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="pricing__punchline">
-                    A plan for each size.
+                    A plan for each size
                   </h2>
                 </div>
               </div>
@@ -308,7 +308,7 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="features__punchline">
-                    About us.
+                    About us
                   </h2>
                 </div>
               </div>
@@ -330,7 +330,7 @@ const IndexPage = ({ data }) => {
                   </div>
                 </div>
                 <div className="col-xs-12 col-sm-5 col-md-offset-1">
-                  <h3 className="features-block__title">The company.</h3>
+                  <h3 className="features-block__title">The company</h3>
                   <p className="features-block__text">Born in January 2021, it was founded by Laurent Schaffner and Jérémie Ges which are both engineers. It's still in closed beta and waiting for your feedbacks.</p>
                 </div>
               </div>

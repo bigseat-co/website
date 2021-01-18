@@ -3,11 +3,16 @@
 }
 
 .pricing__punchline {
-  font-size: 50px;
-  letter-spacing: -0.9px;
-  font-weight: 600;
+  margin-top: 0.5em;
+  font-size: 60px;
+  letter-spacing: $letter-spacing-x-small;
+  font-weight: 800;
   color: $color-black;
   text-align: center;
+
+  @include breakpoint("xs") {
+    font-size: 30px;
+  }
 }
 
 .pricing-block {
