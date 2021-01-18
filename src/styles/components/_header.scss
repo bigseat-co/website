@@ -1,5 +1,7 @@
 .header {
-  margin-top: 1em;
+  max-width: $breakpoint-lg;
+  margin: 0 auto;
+  margin-top: $spacing-unit * 2;
 }
 
 .header__logo {

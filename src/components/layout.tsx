@@ -13,34 +13,36 @@ export default function Layout({ children, datoCmsMenu }) {
     </Helmet>
     <div className="wrapper">
       {/* Header */}
-      <div className="container-fluid">
-        <div className="row middle-xs header">
-          <div className="col-lg-6 col-md-4 col-xs-2">
-            <h1 className="header__logo" onClick={goHome}>
-              BigSeat.
-            </h1>
-          </div>
-          <div className="col-lg-6 col-md-8 col-xs-10">
-            <div className="row end-xs middle-xs menu">
-              <div className="col-sm-3 +more-than-xs">
-                <Link className="header__link" to="#features">
-                  {datoCmsMenu.features}
-                </Link>
-              </div>
-              <div className="col-sm-3 +more-than-xs">
-                <Link className="header__link" to="#pricing">
-                  {datoCmsMenu.pricing}
-                </Link>
-              </div>
-              <div className="col-sm-3 +more-than-xs">
-                <Link className="header__link" to="#about">
-                  {datoCmsMenu.about}
-                </Link>
-              </div>
-              <div className="col-xs-8 col-sm-3">
-                <span className="menu__button" onClick={signIn}>
-                  {datoCmsMenu.signIn}
-                </span>
+      <div className="header">
+        <div className="container-fluid">
+          <div className="row middle-xs">
+            <div className="col-lg col-md-4 col-xs-2">
+              <h1 className="header__logo" onClick={goHome}>
+                BigSeat.
+              </h1>
+            </div>
+            <div className="col-lg col-md-8 col-xs-10">
+              <div className="row end-xs middle-xs menu">
+                <div className="col-sm-3 +more-than-xs">
+                  <Link className="header__link" to="#features">
+                    {datoCmsMenu.features}
+                  </Link>
+                </div>
+                <div className="col-sm-3 +more-than-xs">
+                  <Link className="header__link" to="#pricing">
+                    {datoCmsMenu.pricing}
+                  </Link>
+                </div>
+                <div className="col-sm-3 +more-than-xs">
+                  <Link className="header__link" to="#about">
+                    {datoCmsMenu.about}
+                  </Link>
+                </div>
+                <div className="col-xs-8 col-sm-3">
+                  <span className="menu__button" onClick={signIn}>
+                    {datoCmsMenu.signIn}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
