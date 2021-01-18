@@ -195,7 +195,7 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="pricing__punchline">
-                    A plan for each size
+                    {data.datocms.home.pricingPunchline}
                   </h2>
                 </div>
               </div>
@@ -340,7 +340,7 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="features__punchline">
-                    {data.datocms.aboutPunchline}
+                    {data.datocms.home.aboutPunchline}
                   </h2>
                 </div>
               </div>
