@@ -65,7 +65,7 @@ export default function Layout({ children, datoCmsMenu }) {
               <div className="row center-xs">
                 <div className="col-xs-12 col-sm-6">
                   <div className="banner__underline">
-                    It takes you less than <span className="banner__underline--time">5 minutes</span> to sign-up and start using ou product.
+                    It takes you less than <span className="banner__underline--time">5 minutes</span> to sign-up and start using our product.
                   </div>
                 </div>
               </div>
