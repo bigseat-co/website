@@ -69,6 +69,10 @@
 
 .pricing-block__price--cents {
   font-size: 30px;
+
+  @include breakpoint("sm") {
+    font-size: 20px;
+  }
 }
 
 .pricing-block__price-frequency {
@@ -85,6 +89,10 @@
   padding-bottom: 2em;
   min-height: 170px;
   text-align: left;
+
+  @include breakpoint("sm") {
+    min-height: auto;
+  }
 }
 
 .pricing-block__checklist {
