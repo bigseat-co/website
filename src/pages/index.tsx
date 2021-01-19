@@ -75,22 +75,20 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
               <div className="row center-xs">
-                <div className="col-xs-10 col-md-6">
+                <div className="col-xs-12 col-md-6">
                   <div className="introduction__underline">
                     Track occupancy, optimize space and integrate easily with your company stack.
                   </div>
                 </div>
               </div>
               <div className="row center-xs">
-                <div className="col-lg-8 col-md-10 col-xs-12">
-                  <div className="row middle-xs center-xs">
-                    <button className="button" onClick={signUp}>
-                      Sign up free now
-                    </button>
-                    <button className="button button--white-alt" onClick={learnHow}>
-                      Learn how we do it
-                    </button>
-                  </div>
+                <div className="introduction__buttons">
+                  <button className="button" onClick={signUp}>
+                    Sign up free now
+                  </button>
+                  <button className="button button--white-alt" onClick={learnHow}>
+                    Learn how we do it
+                  </button>
                 </div>
               </div>
               <div className="row">

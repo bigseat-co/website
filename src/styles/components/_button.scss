@@ -9,8 +9,12 @@
   border-radius: 5px;
   cursor: pointer;
 
-  & + button {
-    margin: 0 1em;
+  .introduction__buttons & {
+    @include breakpoint('xs') {
+      padding-right: 1em;
+      padding-left: 1em;
+      font-size: 14px;
+    }
   }
 }
 
