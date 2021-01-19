@@ -111,10 +111,13 @@ const block = (block, index) => {
 
 const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
   return plan.map((advantage, index) => (
-    <div className="row center-xs start-md" key={index}>
+    <div className="row start-xs" key={index}>
       <div className="col-md-12">
-        <div className={(advantage.highlight ? 'pricing-block__check--highlight' : '')}>
-          <span className="pricing-block__check "><img src={(advantage.highlight ? CheckHighlightImage : CheckImage)} /></span> {advantage.text}
+        <div className={(advantage.highlight ? 'pricing-block__check pricing-block__check--highlight' : 'pricing-block__check')}>
+          <span className="pricing-block__check-icon">
+            <img src={(advantage.highlight ? CheckHighlightImage : CheckImage)} />
+          </span>
+          <span className="pricing-block__check-label">{advantage.text}</span>
         </div>
       </div>
     </div>
@@ -190,7 +193,7 @@ const IndexPage = ({ data }) => {
         {/* Pricing */}
         <div className="container-fluid">
           <div className="row center-xs pricing" id="pricing">
-            <div className="col-xs-12 col-md-10 col-lg-8">
+            <div className="col-xs-12 col-md-10 col-lg-10">
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="pricing__punchline">
@@ -198,41 +201,21 @@ const IndexPage = ({ data }) => {
                   </h2>
                 </div>
               </div>
-              <div className="row">
-                {/* Small office */}
-                <div className="col-xs-12 col-sm-4">
-                  <div className="pricing-block">
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
-                        <div className="pricing-block__title">
-                          Small office
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
-                        <div className="pricing-block__price">
-                          Free
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
-                        <div className="pricing-block__price-frequency">
-                          forever
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs start-md">
-                      <div className="col-xs-10 col-md-12">
+              <div className="row center-xs">
+                <div class="col-xs-12 col-md-8 col-lg-7">
+                  <div class="row">
+                    {/* Small office */}
+                    <div className="col-sm-12">
+                      <div className="pricing-block">
+                        <div className="pricing-block__title">Small office</div>
+                        <div className="pricing-block__price">Free</div>
+                        <div className="pricing-block__price-frequency">forever</div>
                         <div className="pricing-block__description">
                           This is our most basic plan. It provides unlimited spaces, analytics and integrations and a few available seats for small structures.
                         </div>
-                      </div>
-                    </div>
-                    {advantagesList(plansAdvantages.smallOffice)}
-                    <div className="row start-xs">
-                      <div className="col-xs-12 center-xs">
+                        <div className="pricing-block__checklist">
+                          {advantagesList(plansAdvantages.smallOffice)}
+                        </div>
                         <div className="pricing-block__button">
                           <div className="button button--white" onClick={selectSmallOffice}>
                             Sign up free now
@@ -240,42 +223,20 @@ const IndexPage = ({ data }) => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                {/* Growing office */}
-                <div className="col-xs-12 col-sm-4">
-                  <div className="pricing-block" data-sal="zoom-in" data-sal-delay="100" data-sal-easing="ease-out-back">
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
-                        <div className="pricing-block__title">
-                          Growing office
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
+                    {/* Growing office */}
+                    <div className="col-sm-12">
+                      <div className="pricing-block">
+                        <div className="pricing-block__title">Growing office</div>
                         <div className="pricing-block__price">
                           $19<span className="pricing-block__price--cents">.90</span>
                         </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
-                        <div className="pricing-block__price-frequency">
-                          per month
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs start-md">
-                      <div className="col-xs-10 col-md-12">
+                        <div className="pricing-block__price-frequency">per month</div>
                         <div className="pricing-block__description">
-                          If you’re a growing company and have too many employees for our free version, this one will fit you perfectly. You can try it out before taking a decision.
+                            If you’re a growing company and have too many employees for our free version, this one will fit you perfectly. You can try it out before taking a decision.
                         </div>
-                      </div>
-                    </div>
-                    {advantagesList(plansAdvantages.growingOffice)}
-                    <div className="row">
-                      <div className="col-xs-12 center-xs">
+                        <div className="pricing-block__checklist">
+                          {advantagesList(plansAdvantages.growingOffice)}
+                        </div>
                         <div className="pricing-block__button">
                           <div className="button" onClick={selectGrowingOffice}>
                             Try for free
@@ -283,42 +244,20 @@ const IndexPage = ({ data }) => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                {/* Big office */}
-                <div className="col-xs-12 col-sm-4">
-                  <div className="pricing-block" data-sal="zoom-in" data-sal-delay="300" data-sal-easing="ease-out-back">
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
-                        <div className="pricing-block__title">
-                          Big office
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
+                    {/* Big office */}
+                    <div className="col-sm-12">
+                      <div className="pricing-block">
+                        <div className="pricing-block__title">Big office</div>
                         <div className="pricing-block__price">
                           $49<span className="pricing-block__price--cents">.90</span>
                         </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs">
-                      <div className="col-xs-12">
-                        <div className="pricing-block__price-frequency">
-                          per month
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row center-xs start-md">
-                      <div className="col-xs-10 col-md-12">
+                        <div className="pricing-block__price-frequency">per month</div>
                         <div className="pricing-block__description">
-                        You’re a bigger, more established company which needs an unlimited amount of seats? No worry, here’s the perfect fit for you.
+                            You’re a bigger, more established company which needs an unlimited amount of seats? No worry, here’s the perfect fit for you.
                         </div>
-                      </div>
-                    </div>
-                    {advantagesList(plansAdvantages.bigOffice)}
-                    <div className="row">
-                      <div className="col-xs-12 center-xs">
+                        <div className="pricing-block__checklist">
+                          {advantagesList(plansAdvantages.bigOffice)}
+                        </div>
                         <div className="pricing-block__button">
                           <div className="button" onClick={selectBigOffice}>
                             Try for free

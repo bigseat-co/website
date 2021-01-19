@@ -4,6 +4,7 @@
 
 .pricing__punchline {
   margin-top: 0.5em;
+  margin-bottom: 2em;
   font-size: 60px;
   letter-spacing: $letter-spacing-x-small;
   font-weight: 800;
@@ -17,11 +18,17 @@
 }
 
 .pricing-block {
-  margin-top: 4em;
   margin-bottom: 5em;
-  border: 1px solid $color-primary;
-  padding: 1em;
+  border: 1px solid $color-gray-300;
+  border-radius: $small-radius;
+  padding: 4em;
   background: $color-white;
+  text-align: left;
+
+  @include breakpoint("md") {
+    margin-bottom: 2em;
+  }
+
   @include breakpoint("xs") {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -32,7 +39,10 @@
   color: $color-primary;
   font-weight: 700;
   font-size: 25px;
-  margin-top: 1em;
+
+  @include breakpoint("sm") {
+    font-size: 22px;
+  }
 }
 
 .pricing-block__price {
@@ -40,6 +50,11 @@
   font-weight: 700;
   margin-top: 0.4em;
   line-height: 1;
+  letter-spacing: $letter-spacing-x-small;
+
+  @include breakpoint("sm") {
+    font-size: 30px;
+  }
 }
 
 .pricing-block__price--cents {
@@ -49,29 +64,43 @@
 .pricing-block__price-frequency {
   font-size: 18px;
   font-weight: 700;
+
+  @include breakpoint("sm") {
+    font-size: 16px;
+  }
 }
 
 .pricing-block__description {
   margin-top: 2em;
   padding-bottom: 2em;
+  text-align: left;
 }
 
-.pricing-block__check {
-  vertical-align: top;
-  img {
-    height: 15px;
+.pricing-block__checklist {
+  line-height: 1.75;
+}
+
+  .pricing-block__check {
+    vertical-align: middle;
   }
-}
 
-.pricing-block__check--highlight {
-  color: $color-primary;
-  font-weight: 500;
-
-  svg {
-    fill: $color-primary;
+  .pricing-block__check--highlight {
+    color: $color-primary;
+    font-weight: 500;
   }
-}
+
+  .pricing-block__check-icon {
+    display: inline-block;
+
+    img {
+      width: 12px;
+      margin-right: $spacing-unit * 2;
+    }
+  }
+
+  .pricing-block__check-label {}
 
 .pricing-block__button {
   margin-top: 2em;
+  text-align: center;
 }
