@@ -32,6 +32,7 @@ export const query = graphql`
         underline
         callToAction
         secondaryAction
+        pricingPunchline
         featuresPunchline
         aboutPunchline
       }
