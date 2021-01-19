@@ -20,6 +20,14 @@
       font-size: 12px;
     }
   }
+
+  & + & {
+    margin-left: 15px;
+
+    @include breakpoint('xxs') {
+      margin-left: 10px;
+    }
+  }
 }
 
 .button--white {
