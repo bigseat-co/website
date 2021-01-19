@@ -50,7 +50,7 @@ export default function Layout({ children, datoCmsMenu }) {
       </div>
       {/* Page content */}
       {children}
-      {/* Footer */}
+      {/* Banner */}
       <div className="banner">
         <div className="container-fluid">
           <div className="row center-xs">
@@ -75,6 +75,32 @@ export default function Layout({ children, datoCmsMenu }) {
                     Sign up free now
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="footer">
+        <div className="container-fluid">
+          <div className="row middle-xs center-xs">
+            <div className="col-xs-4">
+              <h1 className="footer__logo">
+                BigSeat.
+              </h1>
+            </div>
+            <div className="col-xs-4">
+              {/*Legal paper will be there*/}
+            </div>
+            <div className="col-xs-4">
+              <div>
+                <a href="/en">
+                  <span className="footer__acronym">US</span> English
+                </a>
+              </div>
+              <div>
+                <a href="/fr">
+                  <span className="footer__acronym">FR</span> French
+                </a>
               </div>
             </div>
           </div>
