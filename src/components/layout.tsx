@@ -4,14 +4,14 @@ import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import { goHome, signIn, bottomSignUp } from '../helpers/navigate'
 
-export default function Layout({ children, datoCmsMenu }) {
+export default function Layout({ children, menu, home, banner }) {
   return (<main>
     <Helmet>
       <html lang="en" />
-      <title>BigSeat - Office space made simple.</title>
-      <description>Track occupancy, optimize space and integrate easily with your company stack.</description>
+      <title>BigSeat - {home.punchline}</title>
+      <description>{home.underline}</description>
     </Helmet>
-    <div className="wrapper">
+    <div className="wrapper" id="top">
       {/* Header */}
       <div className="header">
         <div className="container-fluid">
@@ -25,22 +25,22 @@ export default function Layout({ children, datoCmsMenu }) {
               <div className="header__items">
                 <div className="header__item">
                   <Link className="header__link" to="#features">
-                    {datoCmsMenu.features}
+                    {menu.features}
                   </Link>
                 </div>
                 <div className="header__item">
                   <Link className="header__link" to="#pricing">
-                    {datoCmsMenu.pricing}
+                    {menu.pricing}
                   </Link>
                 </div>
                 <div className="header__item">
                   <Link className="header__link" to="#about">
-                    {datoCmsMenu.about}
+                    {menu.about}
                   </Link>
                 </div>
                 <div className="header__item header__item--sign-in">
                   <button className="button button--white-alt" onClick={signIn}>
-                    {datoCmsMenu.signIn} ->
+                    {menu.signIn} ->
                   </button>
                 </div>
               </div>
@@ -58,21 +58,21 @@ export default function Layout({ children, datoCmsMenu }) {
               <div className="row">
                 <div className="col-xs-12">
                   <div className="banner__punchline">
-                    Get started now
+                    {banner.punchline}
                   </div>
                 </div>
               </div>
               <div className="row center-xs">
                 <div className="col-xs-12 col-sm-6">
                   <div className="banner__underline">
-                    It takes you less than <span className="banner__underline--time">5 minutes</span> to sign-up and start using our product.
+                    {banner.underline}
                   </div>
                 </div>
               </div>
               <div className="row center-xs">
                 <div className="col-lg-4 col-md-6">
                   <div className="button button--white" onClick={bottomSignUp}>
-                    Sign up free now
+                    {banner.callToAction}
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function Layout({ children, datoCmsMenu }) {
             </div>
             <div className="col-xs-4">
               <div>
-                <a href="/en">
+                <a href="/">
                   <span className="footer__acronym">US</span> English
                 </a>
               </div>

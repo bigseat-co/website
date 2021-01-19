@@ -5,12 +5,6 @@ import { learnHow, signUp, goDown, selectSmallOffice, selectGrowingOffice, selec
 import { isOdd } from '../helpers/numbers'
 
 import IntroductionImage from "../images/introduction.svg"
-import AccessibilityImage from "../images/accessibility.svg"
-import AnalyticsImage from "../images/analytics.svg"
-import IntegrationsImage from "../images/integrations.svg"
-import TheCompanyImage from "../images/the-company.svg"
-import TheProjectImage from "../images/the-project.svg"
-
 import DownImage from "../images/down.svg"
 import CheckImage from "../images/check.svg"
 import CheckHighlightImage from "../images/check-highlight.svg"
@@ -18,16 +12,22 @@ import CheckHighlightImage from "../images/check-highlight.svg"
 import Layout from "../components/layout"
 
 export const query = graphql`
-  query LandingQuery {
+  query LandingQuery($language: DATOCMS_SiteLocale!) {
     datocms {
-      menu(locale: en) {
+      menu(locale: $language) {
         features
         pricing
         about
         signIn
       }
 
-      home(locale: en) {
+      banner(locale: $language) {
+        punchline
+        underline
+        callToAction
+      }
+
+      home(locale: $language) {
         punchline
         underline
         callToAction
@@ -37,7 +37,7 @@ export const query = graphql`
         aboutPunchline
       }
 
-      allFeatures(locale: en, orderBy: order_ASC) {
+      allFeatures(locale: $language, orderBy: order_ASC) {
         title
         description
         image {
@@ -45,7 +45,23 @@ export const query = graphql`
         }
       }
 
-      allAbouts(locale: en, orderBy: order_ASC) {
+      allSubscriptions(locale: $language, orderBy: order_ASC) {
+        slug
+        title
+        price
+        cents
+        frequency
+        description
+        callToAction
+      }
+
+      allSubscriptionAdvantages(locale: $language, orderBy: order_ASC) {
+        subscriptionSlug
+        text
+        highlight
+      }
+
+      allAbouts(locale: $language, orderBy: order_ASC) {
         title
         description
         image {
@@ -77,7 +93,7 @@ const plansAdvantages = {
   ]
 }
 
-const block = (block, index) => {
+const featureBlock = (block, index) => {
   if (isOdd(index)) {
     return (
       <div className="row features-block middle-xs center-xs">
@@ -109,6 +125,45 @@ const block = (block, index) => {
   }
 }
 
+const subscriptionBlock = (block, advantages, index) => {
+
+  const filteredAdvantages = advantages.filter((advantage) => (advantage.subscriptionSlug === block.slug) || (advantage.subscriptionSlug === ''))
+
+  return (<div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div className="pricing-block">
+      <div className="pricing-block__title">{block.title}</div>
+      <div className="pricing-block__price">{block.price}<span className="pricing-block__price--cents">{block.cents}</span></div>
+      <div className="pricing-block__price-frequency">{block.frequency}</div>
+      <div className="pricing-block__description">
+        {block.description}
+      </div>
+      <div className="pricing-block__checklist">
+        {newAdvantagesList(filteredAdvantages)}
+      </div>
+      <div className="pricing-block__button">
+        <div className="button button--white" onClick={selectSmallOffice}>
+          {block.callToAction}
+        </div>
+      </div>
+    </div>
+  </div>)
+}
+
+const newAdvantagesList = (advantages: Array<{ highlight?: boolean, text: string}>) => {
+  return advantages.map((advantage, index) => (
+    <div className="row start-xs" key={index}>
+      <div className="col-md-12">
+        <div className={(advantage.highlight ? 'pricing-block__check pricing-block__check--highlight' : 'pricing-block__check')}>
+          <span className="pricing-block__check-icon">
+            <img src={(advantage.highlight ? CheckHighlightImage : CheckImage)} />
+          </span>
+          <span className="pricing-block__check-label">{advantage.text}</span>
+        </div>
+      </div>
+    </div>
+  ))
+}
+
 const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
   return plan.map((advantage, index) => (
     <div className="row start-xs" key={index}>
@@ -127,7 +182,7 @@ const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
 const IndexPage = ({ data }) => {
   return (
     <main>
-      <Layout datoCmsMenu={data.datocms.menu}>
+      <Layout menu={data.datocms.menu} home={data.datocms.home} banner={data.datocms.banner}>
         <div className="container-fluid">
           <div className="row introduction">
             <div className="col-xs-12">
@@ -183,8 +238,9 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
 
+              {/* Features list */}
               {data.datocms.allFeatures.map((node, index) => (
-                block(node, index)
+                featureBlock(node, index)
               ))}
 
             </div>
@@ -204,67 +260,12 @@ const IndexPage = ({ data }) => {
               <div className="row center-xs">
                 <div className="col-xs-12">
                   <div className="row center-xs">
-                    {/* Small office */}
-                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                      <div className="pricing-block">
-                        <div className="pricing-block__title">Small office</div>
-                        <div className="pricing-block__price">Free</div>
-                        <div className="pricing-block__price-frequency">forever</div>
-                        <div className="pricing-block__description">
-                          This is our most basic plan. It provides unlimited spaces, analytics and integrations and a few available seats for small structures.
-                        </div>
-                        <div className="pricing-block__checklist">
-                          {advantagesList(plansAdvantages.smallOffice)}
-                        </div>
-                        <div className="pricing-block__button">
-                          <div className="button button--white" onClick={selectSmallOffice}>
-                            Sign up free now
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Growing office */}
-                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                      <div className="pricing-block">
-                        <div className="pricing-block__title">Growing office</div>
-                        <div className="pricing-block__price">
-                          $19<span className="pricing-block__price--cents">.90</span>
-                        </div>
-                        <div className="pricing-block__price-frequency">per month</div>
-                        <div className="pricing-block__description">
-                            If you’re a growing company and have too many employees for our free version, this one will fit you perfectly. You can try it out before taking a decision.
-                        </div>
-                        <div className="pricing-block__checklist">
-                          {advantagesList(plansAdvantages.growingOffice)}
-                        </div>
-                        <div className="pricing-block__button">
-                          <div className="button" onClick={selectGrowingOffice}>
-                            Try for free
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Big office */}
-                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                      <div className="pricing-block">
-                        <div className="pricing-block__title">Big office</div>
-                        <div className="pricing-block__price">
-                          $49<span className="pricing-block__price--cents">.90</span>
-                        </div>
-                        <div className="pricing-block__price-frequency">per month</div>
-                        <div className="pricing-block__description">
-                            You’re a bigger, more established company which needs an unlimited amount of seats? No worry, here’s the perfect fit for you.
-                        </div>
-                        <div className="pricing-block__checklist">
-                          {advantagesList(plansAdvantages.bigOffice)}
-                        </div>
-                        <div className="pricing-block__button">
-                          <div className="button" onClick={selectBigOffice}>
-                            Try for free
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
+                    {/* Subscriptions */}
+                    {data.datocms.allSubscriptions.map((node, index) => (
+                      subscriptionBlock(node, data.datocms.allSubscriptionAdvantages, index)
+                    ))}
+
                   </div>
                 </div>
               </div>
@@ -283,8 +284,9 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
 
+              {/* Project list */}
               {data.datocms.allAbouts.map((node, index) => (
-                block(node, index)
+                featureBlock(node, index)
               ))}
 
             </div>
