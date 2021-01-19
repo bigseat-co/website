@@ -202,10 +202,10 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
               <div className="row center-xs">
-                <div class="col-xs-12 col-md-8 col-lg-7">
-                  <div class="row">
+                <div className="col-xs-12">
+                  <div className="row center-xs">
                     {/* Small office */}
-                    <div className="col-sm-12">
+                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                       <div className="pricing-block">
                         <div className="pricing-block__title">Small office</div>
                         <div className="pricing-block__price">Free</div>
@@ -224,7 +224,7 @@ const IndexPage = ({ data }) => {
                       </div>
                     </div>
                     {/* Growing office */}
-                    <div className="col-sm-12">
+                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                       <div className="pricing-block">
                         <div className="pricing-block__title">Growing office</div>
                         <div className="pricing-block__price">
@@ -245,7 +245,7 @@ const IndexPage = ({ data }) => {
                       </div>
                     </div>
                     {/* Big office */}
-                    <div className="col-sm-12">
+                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                       <div className="pricing-block">
                         <div className="pricing-block__title">Big office</div>
                         <div className="pricing-block__price">

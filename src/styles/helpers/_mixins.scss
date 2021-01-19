@@ -19,8 +19,12 @@
     @media (min-width: $breakpoint-lg) {
       @content;
     }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
   } @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+    @warn "Breakpoint mixin supports: xxs, xs, sm, md, lg, xl";
   }
 }
 
