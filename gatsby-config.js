@@ -1,3 +1,5 @@
+const DATOCMS_READ_TOKEN = 'd2f0b3ae3e3a269411fbc829232383'
+
 module.exports = {
     plugins: [
         'gatsby-plugin-sass',
@@ -12,15 +14,15 @@ module.exports = {
           },
         },
         {
-          resolve: `gatsby-source-datocms`,
+          resolve: "gatsby-source-graphql",
           options: {
-            apiToken: `d2f0b3ae3e3a269411fbc829232383`,
-            preview: false,
-            // environment: `main`,
-            // previewMode: false,
-            disableLiveReload: false,
-            localeFallbacks: {
-              fr: ['en'],
+            typeName: "DATOCMS",
+            fieldName: "datocms",
+            url: "https://graphql.datocms.com/",
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': `Bearer ${DATOCMS_READ_TOKEN}`,
             },
           },
         },

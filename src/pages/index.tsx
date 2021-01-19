@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import { learnHow, signUp, goDown, selectSmallOffice, selectGrowingOffice, selectBigOffice} from '../helpers/navigate'
+import { isOdd } from '../helpers/numbers'
 
 import IntroductionImage from "../images/introduction.svg"
 import AccessibilityImage from "../images/accessibility.svg"
@@ -17,12 +18,40 @@ import CheckHighlightImage from "../images/check-highlight.svg"
 import Layout from "../components/layout"
 
 export const query = graphql`
-  query MenuQuery {
-    datoCmsMenu(locale: { eq: "en" }) {
-      features
-      pricing
-      about
-      signIn
+  query LandingQuery {
+    datocms {
+      menu(locale: en) {
+        features
+        pricing
+        about
+        signIn
+      }
+
+      home(locale: en) {
+        punchline
+        underline
+        callToAction
+        secondaryAction
+        pricingPunchline
+        featuresPunchline
+        aboutPunchline
+      }
+
+      allFeatures(locale: en, orderBy: order_ASC) {
+        title
+        description
+        image {
+          url
+        }
+      }
+
+      allAbouts(locale: en, orderBy: order_ASC) {
+        title
+        description
+        image {
+          url
+        }
+      }
     }
   }
 `
@@ -48,6 +77,38 @@ const plansAdvantages = {
   ]
 }
 
+const block = (block, index) => {
+  if (isOdd(index)) {
+    return (
+      <div className="row features-block middle-xs center-xs">
+        <div className="col-xs-12 col-sm-5">
+          <h3 className="features-block__title">{block.title}</h3>
+          <p className="features-block__text">{block.description}</p>
+        </div>
+        <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
+          <div className="features-block__image">
+            <img src={block.image.url} />
+          </div>
+        </div>
+      </div>
+    )
+  } else {
+    return (
+      <div className="row features-block middle-xs center-xs">
+      <div className="col-xs-12 col-sm-5 col-sm-offset-1">
+          <div className="features-block__image">
+            <img src={block.image.url} />
+          </div>
+        </div>
+        <div className="col-xs-12 col-sm-5 col-md-offset-1">
+          <h3 className="features-block__title">{block.title}</h3>
+          <p className="features-block__text">{block.description}</p>
+        </div>
+      </div>
+    )
+  }
+}
+
 const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
   return plan.map((advantage, index) => (
     <div className="row center-xs start-md" key={index}>
@@ -63,31 +124,31 @@ const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
 const IndexPage = ({ data }) => {
   return (
     <main>
-      <Layout datoCmsMenu={data.datoCmsMenu}>
+      <Layout datoCmsMenu={data.datocms.menu}>
         <div className="container-fluid">
           <div className="row introduction">
             <div className="col-xs-12">
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="introduction__punchline">
-                    Office space made simple.
+                    {data.datocms.home.punchline}
                   </h2>
                 </div>
               </div>
               <div className="row center-xs">
                 <div className="col-xs-12 col-md-6">
                   <div className="introduction__underline">
-                    Track occupancy, optimize space and integrate easily with your company stack.
+                    {data.datocms.home.underline}
                   </div>
                 </div>
               </div>
               <div className="row center-xs">
                 <div className="introduction__buttons">
                   <button className="button" onClick={signUp}>
-                    Sign up free now
+                    {data.datocms.home.callToAction}
                   </button>
                   <button className="button button--white-alt" onClick={learnHow}>
-                    Learn how we do it
+                    {data.datocms.home.secondaryAction}
                   </button>
                 </div>
               </div>
@@ -114,43 +175,15 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="features__punchline">
-                    It's that simple
+                  {data.datocms.home.featuresPunchline}
                   </h2>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs">
-                <div className="col-xs-12 col-sm-5">
-                  <h3 className="features-block__title">Accessibility</h3>
-                  <p className="features-block__text">Nothing to install, fast sign-up and super simple interface. You can setup your office space in a few clicks and let people book it by sending them your company link.</p>
-                </div>
-                <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
-                  <div className="features-block__image">
-                    <img src={AccessibilityImage} />
-                  </div>
-                </div>
-              </div>
-              <div className="row features-block middle-xs center-xs">
-              <div className="col-xs-12 col-sm-5 col-sm-offset-1">
-                  <div className="features-block__image">
-                    <img src={AnalyticsImage} />
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-5 col-md-offset-1">
-                  <h3 className="features-block__title">Analytics</h3>
-                  <p className="features-block__text">We digest data for you so you don't have to worry about space optimization. You'll know who's where at any moment and save real rental money by reading our analysis.</p>
-                </div>
-              </div>
-              <div className="row features-block middle-xs center-xs">
-                <div className="col-xs-12 col-sm-5">
-                  <h3 className="features-block__title">Integrations</h3>
-                  <p className="features-block__text">Each company has its stack and we want you to feel you have to adapt. That's why we integrate easily with several solutions such as Slack, Notion or Zapier so you can easily adopt our system.</p>
-                </div>
-                <div className="col-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
-                  <div className="features-block__image">
-                    <img src={IntegrationsImage} />
-                  </div>
-                </div>
-              </div>
+
+              {data.datocms.allFeatures.map((node, index) => (
+                block(node, index)
+              ))}
+
             </div>
           </div>
         </div>
@@ -161,7 +194,7 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="pricing__punchline">
-                    A plan for each size
+                    {data.datocms.home.pricingPunchline}
                   </h2>
                 </div>
               </div>
@@ -306,32 +339,15 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="features__punchline">
-                    About us
+                    {data.datocms.home.aboutPunchline}
                   </h2>
                 </div>
               </div>
-              <div className="row features-block middle-xs center-xs">
-                <div className="col-xs-12 col-sm-5">
-                  <h3 className="features-block__title">The project</h3>
-                  <p className="features-block__text">The world is changing and people relation with offices as well. Working partially from home, or going to the office once in a while. Softwares should evolve and be able to manage this properly. Our goal is to be your office space management solution through our simplicity and flexibility.</p>
-                </div>
-                <div className="ccol-xs-12 first-xs col-sm-5 last-sm col-md-5 col-md-offset-1">
-                  <div className="features-block__image">
-                    <img src={TheProjectImage} />
-                  </div>
-                </div>
-              </div>
-              <div className="row features-block middle-xs center-xs">
-              <div className="col-xs-12 col-sm-5">
-                  <div className="features-block__image">
-                    <img src={TheCompanyImage} />
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-5 col-md-offset-1">
-                  <h3 className="features-block__title">The company</h3>
-                  <p className="features-block__text">Born in January 2021, it was founded by Laurent Schaffner and Jérémie Ges which are both engineers. It's still in closed beta and waiting for your feedbacks.</p>
-                </div>
-              </div>
+
+              {data.datocms.allAbouts.map((node, index) => (
+                block(node, index)
+              ))}
+
             </div>
           </div>
         </div>
