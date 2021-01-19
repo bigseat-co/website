@@ -15,6 +15,10 @@
       padding-left: 1em;
       font-size: 14px;
     }
+
+    @include breakpoint('xxs') {
+      font-size: 12px;
+    }
   }
 }
 
