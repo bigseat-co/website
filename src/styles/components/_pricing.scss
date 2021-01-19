@@ -9,6 +9,7 @@
   font-weight: 800;
   color: $color-black;
   text-align: center;
+  line-height: 1;
 
   @include breakpoint("xs") {
     font-size: 30px;

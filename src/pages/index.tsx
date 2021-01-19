@@ -136,7 +136,7 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
               <div className="row center-xs">
-                <div className="col-xs-12 col-md-6">
+                <div className="col-xs-10 col-md-6">
                   <div className="introduction__underline">
                     {data.datocms.home.underline}
                   </div>
@@ -175,7 +175,7 @@ const IndexPage = ({ data }) => {
               <div className="row">
                 <div className="col-xs-12">
                   <h2 className="features__punchline">
-                  {data.datocms.home.featuresPunchline}
+                    {data.datocms.home.featuresPunchline}
                   </h2>
                 </div>
               </div>
