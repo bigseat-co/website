@@ -179,10 +179,10 @@ const advantagesList = (plan: Array<{ highlight?: boolean, text: string}>) => {
   ))
 }
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, pageContext }) => {
   return (
     <main>
-      <Layout menu={data.datocms.menu} home={data.datocms.home} banner={data.datocms.banner}>
+      <Layout language={pageContext.language} menu={data.datocms.menu} home={data.datocms.home} banner={data.datocms.banner}>
         <div className="container-fluid">
           <div className="row introduction">
             <div className="col-xs-12">

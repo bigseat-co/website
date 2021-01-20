@@ -4,10 +4,11 @@ import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import { goHome, signIn, bottomSignUp } from '../helpers/navigate'
 
-export default function Layout({ children, menu, home, banner }) {
+export default function Layout({ children, language, menu, home, banner }) {
+  debugger
   return (<main>
     <Helmet>
-      <html lang="en" />
+      <html lang={language} />
       <title>BigSeat - {home.punchline}</title>
       <description>{home.underline}</description>
     </Helmet>
