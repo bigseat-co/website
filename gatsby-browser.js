@@ -11,3 +11,7 @@ export const onClientEntry = () => {
     ensureCorrectURL()
   }
 }
+
+export const shouldUpdateScroll = () => {
+  return false
+}
