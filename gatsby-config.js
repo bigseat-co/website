@@ -43,5 +43,13 @@ module.exports = {
             ],
           },
         },
+        {
+          resolve: `gatsby-plugin-hotjar`,
+          options: {
+            includeInDevelopment: false,
+            id: 2206920,
+            sv: 6,
+          },
+        },
     ]
 }
