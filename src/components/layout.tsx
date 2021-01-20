@@ -12,7 +12,7 @@ export default function Layout({ children, language, menu, home, banner }) {
       <title>BigSeat - {home.punchline}</title>
       <description>{home.underline}</description>
     </Helmet>
-    <div className="wrapper" id="top">
+    <div className="wrapper">
       {/* Header */}
       <div className="header">
         <div className="container-fluid">
