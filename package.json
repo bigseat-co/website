@@ -15,8 +15,10 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "browser-lang": "^0.1.0",
     "flexboxgrid": "^6.3.1",
     "gatsby": "^2.26.1",
+    "gatsby-plugin-google-gtag": "^2.7.0",
     "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-manifest": "^2.10.0",
     "gatsby-plugin-react-helmet": "^3.8.0",

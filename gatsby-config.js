@@ -35,5 +35,13 @@ module.exports = {
             redirect: false,
           },
         },
+        {
+          resolve: `gatsby-plugin-google-gtag`,
+          options: {
+            trackingIds: [
+              "G-MV75YRMB44"
+            ],
+          },
+        },
     ]
 }
